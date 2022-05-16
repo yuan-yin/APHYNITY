@@ -10,13 +10,14 @@ Yuan Yin\*, Vincent Le Guen\*, Jérémie Dona\*, Emmanuel de Bézenac\*, Ibrahim
 
 ## Usage
 
-```
+```bash
 python3 train_aphynity.py [-h] [-r ROOT] [-p PHY] [--aug | --no-aug] [-d DEVICE] dataset
 ```
 
 You can choose `rd`, `wave`, or `pendulum` dataset.
 
 ### Options
+
 - Choose physical model:
   - `--phy incomplete` (default): incomplete Param PDE
   - `--phy complete`: complete Param PDE
@@ -31,8 +32,9 @@ You can choose `rd`, `wave`, or `pendulum` dataset.
 - Choose root path for experiments with `--root ROOT`
 
 ### Example
+
 Run APHYNITY with `rd` dataset:
 
-```
+```bash
 python3 train_aphynity.py rd --phy incomplete --aug
 ```

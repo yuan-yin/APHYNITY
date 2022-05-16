@@ -40,7 +40,7 @@ class DampledPendulum(Dataset):
         return y0
 
     def __getitem__(self, index):
-        t_eval = np.arange(0, self.time_horizon, self.dt)
+        t_eval = torch.from_numpy(np.arange(0, self.time_horizon, self.dt))
         if self.data.get(str(index)) is None:
             y0 = self._get_initial_condition(index)
             states = solve_ivp(fun=self._f, t_span=(0, self.time_horizon), y0=y0, method='DOP853', t_eval=t_eval, rtol=1e-10).y
