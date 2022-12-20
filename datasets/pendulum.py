@@ -9,7 +9,7 @@ from collections import OrderedDict
 MAX = np.iinfo(np.int32).max
 
 class DampledPendulum(Dataset):
-    __default_params = OrderedDict(omega0_square=(2 * math.pi / 12) ** 2, alpha=0.2)
+    __default_params = OrderedDict(omega0_square=(2 * math.pi / 6) ** 2, alpha=0.2)
 
     def __init__(self, path, num_seq, time_horizon, dt, params=None, group='train'):
         super().__init__()
