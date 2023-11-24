@@ -158,7 +158,7 @@ class LoopExperiment(BaseExperiment):
             max_i=len(self.train)
         )
         for name, value in metrics.items():
-            message += ' | {name}: {value:.2e}'.format(name=name, value=value)
+            message += ' | {name}: {value:.2e}'.format(name=name, value=float(value))
             
         print(message)
 

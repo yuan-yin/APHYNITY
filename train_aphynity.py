@@ -39,7 +39,7 @@ def cmdline_args():
     'cuda:X' - CUDA device.''')
     return p.parse_args()
 
-def train_leads(dataset_name, model_phy_option, model_aug_option, path, device):
+def train_aphynity(dataset_name, model_phy_option, model_aug_option, path, device):
     train, test = init_dataloaders(dataset_name, os.path.join(path, dataset_name))
 
     if dataset_name == 'rd':
@@ -104,7 +104,7 @@ def train_leads(dataset_name, model_phy_option, model_aug_option, path, device):
 
 if __name__ == '__main__':
     
-    if sys.version_info<(3,7,0):
+    if sys.version_info < (3,7,0):
         sys.stderr.write("You need python 3.7 or later to run this script.\n")
         sys.exit(1)
         
@@ -122,4 +122,4 @@ if __name__ == '__main__':
     print('#', option_dict[args.phy], 'is used in F_p')
     print('#', 'F_a is', 'enabled' if args.aug else 'disabled')
     print('#' * 80)
-    train_leads(args.dataset, model_phy_option=args.phy, model_aug_option=args.aug, path=path, device=args.device)
+    train_aphynity(args.dataset, model_phy_option=args.phy, model_aug_option=args.aug, path=path, device=args.device)
